@@ -1,0 +1,43 @@
+{
+  "name": "star-wars-api",
+  "version": "1.0.0",
+  "description": "Star Wars API",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha ",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/index.js",
+    "start:dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezkemboi/star-wars-API.git"
+  },
+  "keywords": [
+    "nodejs",
+    "graphql",
+    "typescript"
+  ],
+  "author": "Ezrqn Kemboi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezkemboi/star-wars-API/issues"
+  },
+  "homepage": "https://github.com/ezkemboi/star-wars-API#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.21.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
