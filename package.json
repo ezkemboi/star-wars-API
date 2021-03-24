@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha ",
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/index.js",
+    "start": "node dist/index.js",
     "start:dev": "nodemon"
   },
   "repository": {
