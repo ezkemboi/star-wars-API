@@ -16,10 +16,10 @@ const resolvers = {
       context: Context, 
       info: any
     ) => {
-      const people = await axios.get(`${context.url}/people/?page=${args.page}`);
-      return people.data && people.data.results ? people.data.results : [];
+      const result = await axios.get(`${context.url}/people/?page=${args.page}`);
+      return result.data && result.data.results ? result.data.results : [];
     },
-    getPerson: async (
+    getPeopleByName: async (
       root: string, 
       args: {
         name: string
@@ -27,8 +27,8 @@ const resolvers = {
       context: Context, 
       info: any
     ) => {
-      const person = await axios.get(`${context.url}/people/?search=${args.name}`);
-      return person.data && person.data.results ? person.data.results[0] : {};
+      const result = await axios.get(`${context.url}/people/?search=${args.name}`);
+      return result.data && result.data.results ? result.data.results : [];
     }
   }
 }
