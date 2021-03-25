@@ -3,7 +3,8 @@ import { gql } from "apollo-server-express";
 export default gql`
   type Query {
     getPeople(page: Int!): [Person!],
-    getPeopleByName(name: String!): [Person!]
+    getPeopleByName(name: String!): [Person!],
+    getUserHomeWorld(homeWorldUrl: String!): HomeWorld!
   }
   type Person {
     name: String!
@@ -11,5 +12,18 @@ export default gql`
     mass: String!
     gender: String!
     homeworld: String!
+  }
+  type HomeWorld {
+    name: String
+    rotation_period: String
+    orbital_period: String
+    diameter: String
+    climate: String
+    gravity: String
+    terrain: String
+    surface_water: String
+    population: String
+    residents: [String]
+    films: [String]
   }
 `
