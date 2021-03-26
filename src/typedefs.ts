@@ -2,9 +2,13 @@ import { gql } from "apollo-server-express";
 
 export default gql`
   type Query {
-    getPeople(page: Int!): [Person!],
+    getPeople(page: Int!): People,
     getPeopleByName(name: String!): [Person!],
     getUserHomeWorld(homeWorldUrl: String!): HomeWorld!
+  }
+  type People {
+    people: [Person!]
+    count: Int!
   }
   type Person {
     name: String!

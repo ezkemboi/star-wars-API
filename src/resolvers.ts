@@ -17,8 +17,15 @@ const resolvers = {
       info: any
     ) => {
       const result = await axios.get(`${context.url}/people/?page=${args.page}`);
-      console.log({ result: result.data.results })
-      return result.data && result.data.results ? result.data.results : [];
+      let response = {
+        people:  [Object],
+        count: Number
+      }
+      if(result.data && result.data.results) {
+        response.people = result.data.results;
+        response.count = result.data.count
+      }
+      return response;
     },
     getPeopleByName: async (
       root: string, 
