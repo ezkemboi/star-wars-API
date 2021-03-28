@@ -4,7 +4,7 @@
   "description": "Star Wars API",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha ",
+    "test": "PORT=8001 nyc mocha -r ts-node/register 'tests/**/*.spec.ts' --exit",
     "build": "rimraf ./dist && tsc",
     "start": "node dist/index.js",
     "start:dev": "nodemon"
@@ -34,8 +34,13 @@
     "graphql": "^15.5.0"
   },
   "devDependencies": {
+    "@types/mocha": "^8.2.2",
     "@types/node": "^14.14.35",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.3.2",
     "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
