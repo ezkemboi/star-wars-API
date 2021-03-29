@@ -48,7 +48,6 @@ describe("Main App", () => {
   })
 
   it('returns a single person details', async () => {
-    console.log({ leta: persistedUser.name })
     const searchName = "Qui-Gon Jinn";
     const result = await chai.request(app).post("/").send({
       query: `

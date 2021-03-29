@@ -1,13 +1,21 @@
+sudo: false
 language: node_js
 
-node_js: "12"
+node_js: "node"
 
 cache:
   directories:
     - node_modules
 
+env:
+  global:
+    - COVERALLS_PARALLEL=true
+
 script: 
   - npm run test
 
 after_script:
-  - npm install coveralls && npm run test
+  - npm run coverage
+
+notifications:
+  webhooks: https://coveralls.io/webhook
